@@ -1,0 +1,25 @@
+%h1 Listing works
+
+%table
+  %tr
+    %th Title
+    %th Description
+    %th Deadline
+    %th Work
+    %th
+    %th
+    %th
+
+  - @works.each do |work|
+    %tr
+      %td= work.title
+      %td= work.description
+      %td= work.deadline
+      %td= work.work
+      %td= link_to 'Show', work
+      %td= link_to 'Edit', edit_work_path(work)
+      %td= link_to 'Destroy', work, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Work', new_work_path
