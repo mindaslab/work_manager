@@ -13,10 +13,14 @@
     = f.label :description
     = f.text_area :description
   .field
+    = f.label :assignee_email
+    = f.email_field :assignee_email
+  .field
     = f.label :deadline
     = f.datetime_select :deadline
-  .field
-    = f.label :work
-    = f.text_field :work
+  -#
+    .field
+      = f.label :work
+      = f.text_field :work
   .actions
     = f.submit 'Save'

@@ -1,7 +1,7 @@
 class Work < ActiveRecord::Base
   belongs_to :work
   has_many :works
-  attr_accessible :deadline, :description, :title, :asignee_email
+  attr_accessible :deadline, :description, :title, :assignee_email
   validates :title, presence: true
   belongs_to :assigner, :class_name => "User", :foreign_key => "assigned_by"
   belongs_to :assignee, :class_name => "User", :foreign_key => "assigned_to"
@@ -15,7 +15,7 @@ class Work < ActiveRecord::Base
 
   ##
   # Gets the assignee to the email specified
-  def asignee_email
-  	self.asignee.email
+  def assignee_email
+  	self.assignee.email if self.assignee
   end
 end
