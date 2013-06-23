@@ -15,4 +15,12 @@ class Work < ActiveRecord::Base
   def assignee
   	User.find self.assigned_to
   end
+
+  def assigner_email= email
+  	self.assigned_by = User.find_by_email(email).id
+  end
+
+  def assignee_email= email
+  	self.assigned_to = User.find_by_email(email).id
+  end
 end
