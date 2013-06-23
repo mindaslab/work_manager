@@ -3,23 +3,17 @@ class Work < ActiveRecord::Base
   has_many :works
   attr_accessible :deadline, :description, :title
   validates :title, presence: true
+  belongs_to :assigner, :class_name => "User", :foreign_key => "assigned_by"
+  belongs_to :assignee, :class_name => "User", :foreign_key => "assigned_to"
 
   ##
-  # The person who has initiated the work
-  def assigner
-  	User.find self.assigned_by
-  end
-
-  ##
-  # The person who should complete the work
-  def assignee
-  	User.find self.assigned_to
-  end
-
+  # Sets the assigner to the email specified
   def assigner_email= email
   	self.assigned_by = User.find_by_email(email).id
   end
 
+  ##
+  # Sets the assignee to the email specified
   def assignee_email= email
   	self.assigned_to = User.find_by_email(email).id
   end
