@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130622130503) do
+ActiveRecord::Schema.define(:version => 20130623134436) do
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -47,8 +47,11 @@ ActiveRecord::Schema.define(:version => 20130622130503) do
     t.text     "description"
     t.datetime "deadline"
     t.integer  "work_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "assigned_by"
+    t.integer  "assigned_to"
+    t.datetime "completed_on"
   end
 
   add_index "works", ["work_id"], :name => "index_works_on_work_id"
