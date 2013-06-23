@@ -25,23 +25,38 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href="#") Wm
-          .container.nav-collapse
+          %a.brand(href="/") Work Manager
+          .container.nav-collapse.pull-right
             %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
-
+              %li= link_to "New Work", new_work_path
+              %li#fat-menu.dropdown
+                %a#drop3.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
+                  = current_user.name
+                  %b.caret
+                %ul.dropdown-menu{"aria-labelledby" => "drop3", :role => "menu"}
+                  %li{:role => "presentation"}
+                    %a{:href => "#", :role => "menuitem", :tabindex => "-1"} Dashboard
+                  %li{:role => "presentation"}
+                    %a{:href => "#", :role => "menuitem", :tabindex => "-1"} All Work
+                  %li{:role => "presentation"}
+                    %a{:href => "#", :role => "menuitem", :tabindex => "-1"} Created Work
+                  %li{:role => "presentation"}
+                    %a{:href => "#", :role => "menuitem", :tabindex => "-1"} Assigned Work
+                  %li.divider{:role => "presentation"}
+                  %li{:role => "presentation"}
+                    = link_to "Edit Profile", "#"
+                  %li{:role => "presentation"}
+                    =link_to "Logout", destroy_user_session_path
     .container-fluid
 
       .row-fluid
         .span3
           .well.sidebar-nav
             %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+              %li.nav-header Works
+              %li= link_to "All", "/path"
+              %li= link_to "Created", "/path1"
+              %li= link_to "Assigned", "/path2"      
         .span9
           = bootstrap_flash
           = yield

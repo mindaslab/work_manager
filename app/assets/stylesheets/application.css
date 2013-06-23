@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+form.global-search{
+	display: inline;
+	padding-top: 10px;
+}
