@@ -22,4 +22,39 @@
 
 %br
 
-= link_to 'New Work', new_work_path
+%table.table.table-stripped
+  %tr
+    %th Work
+    %th Created by
+    %th Assigned to
+    %th Deadline
+    %th Status
+    %td Action
+  %tr
+    %td Create Work Manager
+    %td Karthikeyan A K
+    %td Karthikeyan A K
+    %td= Time.now + 1.month
+    %td
+      %span.label.label-inverse Completed
+  %tr
+    %td Create Work Manager
+    %td Karthikeyan A K
+    %td Karthikeyan A K
+    %td= Time.now + 1.month
+    %td
+      %span.label.label-success Progressing
+  %tr
+    %td Create Work Manager
+    %td Karthikeyan A K
+    %td Karthikeyan A K
+    %td= Time.now + 1.month
+    %td
+      %span.label.label-important Failed
+  %tr
+    %td Create Work Manager
+    %td Karthikeyan A K
+    %td Karthikeyan A K
+    %td= Time.now + 1.month
+    %td
+      %span.label.label-warning Stopped
