@@ -1,26 +1,11 @@
-%h1 Listing works
-
-%table
-  %tr
-    %th Title
-    %th Description
-    %th Deadline
-    %th Work
-    %th
-    %th
-    %th
-
-  - @works.each do |work|
-    %tr
-      %td= work.title
-      %td= work.description
-      %td= work.deadline
-      %td= work.work
-      %td= link_to 'Show', work
-      %td= link_to 'Edit', edit_work_path(work)
-      %td= link_to 'Destroy', work, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
+%ul.breadcrumb
+  %li
+    %a{:href => "#"} Home
+    %span.divider /
+  %li
+    %a{:href => "#"} Library
+    %span.divider /
+  %li.active Data
 
 %table.table.table-stripped
   %tr
@@ -37,6 +22,7 @@
     %td= Time.now + 1.month
     %td
       %span.label.label-inverse Completed
+    %td
   %tr
     %td Create Work Manager
     %td Karthikeyan A K
@@ -44,6 +30,7 @@
     %td= Time.now + 1.month
     %td
       %span.label.label-success Progressing
+    %td
   %tr
     %td Create Work Manager
     %td Karthikeyan A K
@@ -51,6 +38,7 @@
     %td= Time.now + 1.month
     %td
       %span.label.label-important Failed
+    %td
   %tr
     %td Create Work Manager
     %td Karthikeyan A K
@@ -58,3 +46,4 @@
     %td= Time.now + 1.month
     %td
       %span.label.label-warning Stopped
+    %td

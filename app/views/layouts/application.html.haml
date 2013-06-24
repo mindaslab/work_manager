@@ -46,18 +46,11 @@
                   %li{:role => "presentation"}
                     = link_to "Edit Profile", "#"
                   %li{:role => "presentation"}
-                    =link_to "Logout", destroy_user_session_path
+                    =link_to "Logout", destroy_user_session_path 
     .container-fluid
 
-      .row-fluid
-        .span3
-          .well.sidebar-nav
-            %ul.nav.nav-list
-              %li.nav-header Works
-              %li= link_to "All", "/path"
-              %li= link_to "Created", "/path1"
-              %li= link_to "Assigned", "/path2"      
-        .span9
+      .row-fluid     
+        .span12
           = bootstrap_flash
           = yield
     
